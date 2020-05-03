@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Karma.Models.Carrier>
+
+@{
+    ViewBag.Title = "Indice";
+}
+
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Shop Carrier page</h1>
+                <nav class="d-flex align-items-center">
+                    <a href='@Url.Action("Index","Index")'>Inicio<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="#"><span class="lnr lnr-arrow-right"></span></a>
+                    <a href='@Url.Action("Index","Carriers")'>Carrier</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+
+<p>
+    @Html.ActionLink("Agregar nuevo" , "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreCarrier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCarrier)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", "Carriers", new { id = item.CarrierID })" class="btn btn-success btn-sm active" role="button" aria-pressed="true">Editar</a>
+                <a href="@Url.Action("Details", "Carriers", new { id = item.CarrierID })" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Detalles</a>
+                <a href="@Url.Action("Delete", "Carriers", new { id = item.CarrierID })" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Eliminar</a>
+            </td>
+        </tr>
+    }
+
+</table>

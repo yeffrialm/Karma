@@ -1,0 +1,56 @@
+﻿@model Karma.Models.Carrier
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Shop Carrier page</h1>
+                <nav class="d-flex align-items-center">
+                    <a href='@Url.Action("Index","Index")'>Inicio<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="#"><span class="lnr lnr-arrow-right"></span></a>
+                    <a href='@Url.Action("Delete","Carriers")'>Carrier</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+
+<h3>Estas seguro que quieres borrarlo?</h3>
+<div>
+    <h4>Carrier</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreCarrier)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreCarrier)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar atras", "Index")
+        </div>
+    }
+</div>

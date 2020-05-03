@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Karma.Models.Producto>
+
+@{
+    ViewBag.Title = "Indice";
+}
+
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Shop Producto page</h1>
+                <nav class="d-flex align-items-center">
+                    <a href='@Url.Action("Index","Index")'>Inicio<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="#"><span class="lnr lnr-arrow-right"></span></a>
+                    <a href='@Url.Action("Index","Producto")'>Producto</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+
+<p>
+    @Html.ActionLink("Agregar nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreProducto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadPorUnidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioUnidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnidadesEnStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnidadesPorTransaccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NivelPedidosDeStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discontinuado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria.NombreCategoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Suplidor.NombreEmpresa)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantidadPorUnidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioUnidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnidadesEnStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnidadesPorTransaccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NivelPedidosDeStock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discontinuado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria.NombreCategoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Suplidor.NombreEmpresa)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", "Producto", new { id = item.ProductoID })" class="btn btn-success btn-sm active" role="button" aria-pressed="true">Editar</a>
+                <a href="@Url.Action("Details", "Producto", new { id = item.ProductoID })" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Detalles</a>
+                <a href="@Url.Action("Delete", "Producto", new { id = item.ProductoID  })" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Eliminar</a>
+            </td>
+        </tr>
+    }
+
+</table>

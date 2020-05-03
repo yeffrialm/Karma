@@ -1,0 +1,105 @@
+﻿@model Karma.Models.Producto
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Shop Producto page</h1>
+                <nav class="d-flex align-items-center">
+                    <a href='@Url.Action("Index","Index")'>Inicio<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="#"><span class="lnr lnr-arrow-right"></span></a>
+                    <a href='@Url.Action("Details","Producto")'>Producto</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+
+<div>
+    <h4>Producto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreProducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CantidadPorUnidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantidadPorUnidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioUnidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioUnidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnidadesEnStock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnidadesEnStock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnidadesPorTransaccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnidadesPorTransaccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NivelPedidosDeStock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NivelPedidosDeStock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Discontinuado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discontinuado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria.NombreCategoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.NombreCategoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Suplidor.NombreEmpresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Suplidor.NombreEmpresa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ProductoID }) |
+    @Html.ActionLink("Regresar atras", "Index")
+</p>

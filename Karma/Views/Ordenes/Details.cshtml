@@ -1,0 +1,129 @@
+﻿@model Karma.Models.Ordenes
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Shop Ordenes page</h1>
+                <nav class="d-flex align-items-center">
+                    <a href='@Url.Action("Index","Index")'>Inicio<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="#"><span class="lnr lnr-arrow-right"></span></a>
+                    <a href='@Url.Action("Details","Ordenes")'>Ordenes</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+
+<div>
+    <h4>Ordenes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaOrdenes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaOrdenes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaRequeida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaRequeida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaEnvio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaEnvio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreEnvio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreEnvio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DireccionEnvio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DireccionEnvio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProvinciaEnvio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProvinciaEnvio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MunicipioEnvio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MunicipioEnvio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoPostalEnvio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoPostalEnvio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaisEnvio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaisEnvio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Carrier.NombreCarrier)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Carrier.NombreCarrier)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente.Empresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Empresa)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.OrdenesID }) |
+    @Html.ActionLink("Regresar atras", "Index")
+</p>

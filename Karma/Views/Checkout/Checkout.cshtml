@@ -1,0 +1,118 @@
+﻿    <!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Checkout</h1>
+                <nav class="d-flex align-items-center">
+                    <a href='@Url.Action("Index","Index")'>Inicio<span class="lnr lnr-arrow-right"></span></a>
+                    <a href= '@Url.Action("Checkout","Checkout")'>Producto Checkout</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+<!--================Checkout Area =================-->
+<section class="checkout_area section_gap">
+    <div class="container">
+       
+        <div class="billing_details">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Detalles de facturación</h3>
+                    <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                        <div class="col-md-6 form-group p_star">
+                            <input type="text" class="form-control" id="first" name="name">
+                            <span class="placeholder" data-placeholder="Nombre"></span>
+                        </div>
+                        <div class="col-md-6 form-group p_star">
+                            <input type="text" class="form-control" id="last" name="name">
+                            <span class="placeholder" data-placeholder="Apellido"></span>
+                        </div>
+                        <div class="col-md-9 form-group">
+                            <input type="text" class="form-control" id="company" name="company" placeholder="Empresa">
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <input type="text" class="form-control" id="zip" name="zip" placeholder="Codigo postal">
+                        </div>
+                        <div class="col-md-6 form-group p_star">
+                            <input type="text" class="form-control" id="number" name="number">
+                            <span class="placeholder" data-placeholder="Telefono"></span>
+                        </div>
+                        <div class="col-md-6 form-group p_star">
+                            <input type="text" class="form-control" id="email" name="compemailany">
+                            <span class="placeholder" data-placeholder="Correo electronico"></span>
+                        </div>
+                        <div class="col-md-12 form-group p_star">
+                            <select class="country_select">
+                                <option value="1">Republica Dominicana</option>
+
+                            </select>
+                        </div>
+                        <div class="col-md-12 form-group p_star">
+                            <input type="text" class="form-control" id="add1" name="add1">
+                            <span class="placeholder" data-placeholder="Direccion "></span>
+                        </div>
+                        <div class="col-md-12 form-group p_star">
+                            <input type="text" class="form-control" id="city" name="city">
+                            <span class="placeholder" data-placeholder="Provincia"></span>
+                        </div>
+                        <div class="col-md-12 form-group p_star">
+                            <input type="text" class="form-control" id="city" name="city">
+                            <span class="placeholder" data-placeholder="Municipio"></span>
+                        </div>
+
+
+                    </form>
+                </div>
+                <div class="col-lg-4">
+                    <div class="order_box">
+                        <h2>Tu Orden</h2>
+                        <ul class="list">
+                            <li><a href="#">Productos <span>Total</span></a></li>
+                            <li><a href="#">Fresh Blackberry <span class="middle">x 02</span> <span class="last">$720.00</span></a></li>
+                            <li><a href="#">Fresh Tomatoes <span class="middle">x 02</span> <span class="last">$720.00</span></a></li>
+                            <li><a href="#">Fresh Brocoli <span class="middle">x 02</span> <span class="last">$720.00</span></a></li>
+                        </ul>
+                        <ul class="list list_2">
+                            <li><a href="#">Subtotal <span>$2160.00</span></a></li>
+                            <li><a href="#">fLETE <span>Tarifa plana: $50.00</span></a></li>
+                            <li><a href="#">Total <span>$2210.00</span></a></li>
+                        </ul>
+                        <div class="payment_item">
+                            <div class="radion_btn">
+                                <input type="radio" id="f-option5" name="selector">
+                                <label for="f-option5">Comprobar pago</label>
+                                <div class="check"></div>
+                            </div>
+                            <p>
+                                Envíe un cheque a nombre de la tienda, Calle de la tienda, Ciudad de la tienda, Provincia / Municipio,
+                                Código postal de la tienda.
+                            </p>
+                        </div>
+                        <div class="payment_item active">
+                            <div class="radion_btn">
+                                <input type="radio" id="f-option6" name="selector">
+                                <label for="f-option6">Paypal </label>
+                                <img src="@Url.Content("~/Content/img/product/card.jpg")" alt="">
+                                <div class="check"></div>
+                            </div>
+                            <p>
+                                Pagar a través de PayPal; puedes pagar con tu tarjeta de crédito si no tienes una cuenta en PayPal
+
+                            </p>
+                        </div>
+                        <div class="creat_account">
+                            <input type="checkbox" id="f-option4" name="selector">
+                            <label for="f-option4">He leído y acepto los </label>
+                            <a href="#">terminos & condiciones*</a>
+                        </div>
+                        <a class="primary-btn" href='@Url.Action("Confirmation","Confirmation")'>Proceder hacer el pago</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Checkout Area =================-->

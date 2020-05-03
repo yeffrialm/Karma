@@ -1,0 +1,103 @@
+﻿@model IEnumerable<Karma.Models.Suplidor>
+
+@{
+    ViewBag.Title = "Indice";
+}
+
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Shop Suplidor page</h1>
+                <nav class="d-flex align-items-center">
+                    <a href='@Url.Action("Index","Index")'>Inicio<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="#"><span class="lnr lnr-arrow-right"></span></a>
+                    <a href='@Url.Action("Index","Suplidor")'>Suplidor</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+
+<p>
+    @Html.ActionLink("Agregar nuevo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreEmpresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreContacto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactoCargo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Provincia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Municipio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoPostal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaginaWeb)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreEmpresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreContacto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactoCargo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Provincia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Municipio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoPostal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pais)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaginaWeb)
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", "Suplidor", new { id = item.SuplidorID })" class="btn btn-success btn-sm active" role="button" aria-pressed="true">Editar</a>
+                <a href="@Url.Action("Details", "Suplidor", new { id = item.SuplidorID  })" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Detalles</a>
+                <a href="@Url.Action("Delete", "Suplidor", new { id = item.SuplidorID  })" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Eliminar</a>
+            </td>
+        </tr>
+    }
+
+</table>

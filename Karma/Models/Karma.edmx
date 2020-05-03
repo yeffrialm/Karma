@@ -1,0 +1,661 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="KarmaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Carrier">
+          <Key>
+            <PropertyRef Name="CarrierID" />
+          </Key>
+          <Property Name="CarrierID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreCarrier" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="24" />
+        </EntityType>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="CategoriaID" />
+          </Key>
+          <Property Name="CategoriaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreCategoria" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Descripcion" Type="ntext" />
+          <Property Name="Imagen" Type="image" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="ClienteID" />
+          </Key>
+          <Property Name="ClienteID" Type="nchar" MaxLength="5" Nullable="false" />
+          <Property Name="Empresa" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Contacto" Type="nvarchar" MaxLength="30" />
+          <Property Name="ContactoCargo" Type="nvarchar" MaxLength="30" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="60" />
+          <Property Name="Provincia" Type="nvarchar" MaxLength="15" />
+          <Property Name="Municipio" Type="nvarchar" MaxLength="15" />
+          <Property Name="CodigoPostal" Type="nvarchar" MaxLength="10" />
+          <Property Name="Pais" Type="nvarchar" MaxLength="15" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="24" />
+        </EntityType>
+        <EntityType Name="DetallesOrdenes">
+          <Key>
+            <PropertyRef Name="OrdenesID" />
+            <PropertyRef Name="ProductoID" />
+          </Key>
+          <Property Name="OrdenesID" Type="int" Nullable="false" />
+          <Property Name="ProductoID" Type="int" Nullable="false" />
+          <Property Name="PrecioUnidad" Type="money" Nullable="false" />
+          <Property Name="Cantidad" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Municipio">
+          <Key>
+            <PropertyRef Name="MunicipioID" />
+          </Key>
+          <Property Name="MunicipioID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MunicipioDescripcion" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProvinciaID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ordenes">
+          <Key>
+            <PropertyRef Name="OrdenesID" />
+          </Key>
+          <Property Name="OrdenesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClienteID" Type="nchar" MaxLength="5" />
+          <Property Name="FechaOrdenes" Type="datetime" />
+          <Property Name="FechaRequeida" Type="datetime" />
+          <Property Name="FechaEnvio" Type="datetime" />
+          <Property Name="ViaEnvio" Type="int" />
+          <Property Name="Flete" Type="money" />
+          <Property Name="NombreEnvio" Type="nvarchar" MaxLength="40" />
+          <Property Name="DireccionEnvio" Type="nvarchar" MaxLength="60" />
+          <Property Name="ProvinciaEnvio" Type="nvarchar" MaxLength="15" />
+          <Property Name="MunicipioEnvio" Type="nvarchar" MaxLength="15" />
+          <Property Name="CodigoPostalEnvio" Type="nvarchar" MaxLength="10" />
+          <Property Name="PaisEnvio" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="ProductoID" />
+          </Key>
+          <Property Name="ProductoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreProducto" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="SuplidorID" Type="int" />
+          <Property Name="CategoriaID" Type="int" />
+          <Property Name="CantidadPorUnidad" Type="nvarchar" MaxLength="20" />
+          <Property Name="PrecioUnidad" Type="money" />
+          <Property Name="UnidadesEnStock" Type="smallint" />
+          <Property Name="UnidadesPorTransaccion" Type="smallint" />
+          <Property Name="NivelPedidosDeStock" Type="smallint" />
+          <Property Name="Discontinuado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Provincia">
+          <Key>
+            <PropertyRef Name="ProvinciaID" />
+          </Key>
+          <Property Name="ProvinciaID" Type="int" Nullable="false" />
+          <Property Name="ProvinciaDescripcion" Type="nchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Suplidor">
+          <Key>
+            <PropertyRef Name="SuplidorID" />
+          </Key>
+          <Property Name="SuplidorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreEmpresa" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="NombreContacto" Type="nvarchar" MaxLength="30" />
+          <Property Name="ContactoCargo" Type="nvarchar" MaxLength="30" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="60" />
+          <Property Name="Provincia" Type="nvarchar" MaxLength="15" />
+          <Property Name="Municipio" Type="nvarchar" MaxLength="15" />
+          <Property Name="CodigoPostal" Type="nvarchar" MaxLength="10" />
+          <Property Name="pais" Type="nvarchar" MaxLength="15" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="24" />
+          <Property Name="PaginaWeb" Type="ntext" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Detalles_Ordenes_Orders">
+          <End Role="Ordenes" Type="Self.Ordenes" Multiplicity="1" />
+          <End Role="DetallesOrdenes" Type="Self.DetallesOrdenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ordenes">
+              <PropertyRef Name="OrdenesID" />
+            </Principal>
+            <Dependent Role="DetallesOrdenes">
+              <PropertyRef Name="OrdenesID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Detalles_Ordenes_Producto">
+          <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+          <End Role="DetallesOrdenes" Type="Self.DetallesOrdenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="ProductoID" />
+            </Principal>
+            <Dependent Role="DetallesOrdenes">
+              <PropertyRef Name="ProductoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Municipio_Provincia">
+          <End Role="Provincia" Type="Self.Provincia" Multiplicity="1" />
+          <End Role="Municipio" Type="Self.Municipio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincia">
+              <PropertyRef Name="ProvinciaID" />
+            </Principal>
+            <Dependent Role="Municipio">
+              <PropertyRef Name="ProvinciaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ordenes_Carrier">
+          <End Role="Carrier" Type="Self.Carrier" Multiplicity="0..1" />
+          <End Role="Ordenes" Type="Self.Ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carrier">
+              <PropertyRef Name="CarrierID" />
+            </Principal>
+            <Dependent Role="Ordenes">
+              <PropertyRef Name="ViaEnvio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ordenes_Clientes">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Ordenes" Type="Self.Ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ClienteID" />
+            </Principal>
+            <Dependent Role="Ordenes">
+              <PropertyRef Name="ClienteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Producto_Categoria">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
+          <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="CategoriaID" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="CategoriaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Producto_Suplidor">
+          <End Role="Suplidor" Type="Self.Suplidor" Multiplicity="0..1" />
+          <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suplidor">
+              <PropertyRef Name="SuplidorID" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="SuplidorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KarmaModelStoreContainer">
+          <EntitySet Name="Carrier" EntityType="Self.Carrier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DetallesOrdenes" EntityType="Self.DetallesOrdenes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Municipio" EntityType="Self.Municipio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ordenes" EntityType="Self.Ordenes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provincia" EntityType="Self.Provincia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Suplidor" EntityType="Self.Suplidor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Detalles_Ordenes_Orders" Association="Self.FK_Detalles_Ordenes_Orders">
+            <End Role="Ordenes" EntitySet="Ordenes" />
+            <End Role="DetallesOrdenes" EntitySet="DetallesOrdenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Detalles_Ordenes_Producto" Association="Self.FK_Detalles_Ordenes_Producto">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="DetallesOrdenes" EntitySet="DetallesOrdenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Municipio_Provincia" Association="Self.FK_Municipio_Provincia">
+            <End Role="Provincia" EntitySet="Provincia" />
+            <End Role="Municipio" EntitySet="Municipio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ordenes_Carrier" Association="Self.FK_Ordenes_Carrier">
+            <End Role="Carrier" EntitySet="Carrier" />
+            <End Role="Ordenes" EntitySet="Ordenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ordenes_Clientes" Association="Self.FK_Ordenes_Clientes">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Ordenes" EntitySet="Ordenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Producto_Categoria" Association="Self.FK_Producto_Categoria">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Producto" EntitySet="Producto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Producto_Suplidor" Association="Self.FK_Producto_Suplidor">
+            <End Role="Suplidor" EntitySet="Suplidor" />
+            <End Role="Producto" EntitySet="Producto" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KarmaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Carrier">
+          <Key>
+            <PropertyRef Name="CarrierID" />
+          </Key>
+          <Property Name="CarrierID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreCarrier" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefono" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Ordenes" Relationship="Self.FK_Ordenes_Carrier" FromRole="Carrier" ToRole="Ordenes" />
+        </EntityType>
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="CategoriaID" />
+          </Key>
+          <Property Name="CategoriaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreCategoria" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK_Producto_Categoria" FromRole="Categoria" ToRole="Producto" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="ClienteID" />
+          </Key>
+          <Property Name="ClienteID" Type="String" MaxLength="5" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Empresa" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contacto" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ContactoCargo" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Provincia" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Municipio" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CodigoPostal" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Pais" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Ordenes" Relationship="Self.FK_Ordenes_Clientes" FromRole="Cliente" ToRole="Ordenes" />
+        </EntityType>
+        <EntityType Name="DetallesOrdenes">
+          <Key>
+            <PropertyRef Name="OrdenesID" />
+            <PropertyRef Name="ProductoID" />
+          </Key>
+          <Property Name="OrdenesID" Type="Int32" Nullable="false" />
+          <Property Name="ProductoID" Type="Int32" Nullable="false" />
+          <Property Name="PrecioUnidad" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Cantidad" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="Ordenes" Relationship="Self.FK_Detalles_Ordenes_Orders" FromRole="DetallesOrdenes" ToRole="Ordenes" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK_Detalles_Ordenes_Producto" FromRole="DetallesOrdenes" ToRole="Producto" />
+        </EntityType>
+        <EntityType Name="Municipio">
+          <Key>
+            <PropertyRef Name="MunicipioID" />
+          </Key>
+          <Property Name="MunicipioID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MunicipioDescripcion" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ProvinciaID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Provincia" Relationship="Self.FK_Municipio_Provincia" FromRole="Municipio" ToRole="Provincia" />
+        </EntityType>
+        <EntityType Name="Ordenes">
+          <Key>
+            <PropertyRef Name="OrdenesID" />
+          </Key>
+          <Property Name="OrdenesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClienteID" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+          <Property Name="FechaOrdenes" Type="DateTime" Precision="3" />
+          <Property Name="FechaRequeida" Type="DateTime" Precision="3" />
+          <Property Name="FechaEnvio" Type="DateTime" Precision="3" />
+          <Property Name="ViaEnvio" Type="Int32" />
+          <Property Name="Flete" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="NombreEnvio" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="DireccionEnvio" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="ProvinciaEnvio" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="MunicipioEnvio" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CodigoPostalEnvio" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PaisEnvio" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Carrier" Relationship="Self.FK_Ordenes_Carrier" FromRole="Ordenes" ToRole="Carrier" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Ordenes_Clientes" FromRole="Ordenes" ToRole="Cliente" />
+          <NavigationProperty Name="DetallesOrdenes" Relationship="Self.FK_Detalles_Ordenes_Orders" FromRole="Ordenes" ToRole="DetallesOrdenes" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="ProductoID" />
+          </Key>
+          <Property Name="ProductoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreProducto" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SuplidorID" Type="Int32" />
+          <Property Name="CategoriaID" Type="Int32" />
+          <Property Name="CantidadPorUnidad" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PrecioUnidad" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="UnidadesEnStock" Type="Int16" />
+          <Property Name="UnidadesPorTransaccion" Type="Int16" />
+          <Property Name="NivelPedidosDeStock" Type="Int16" />
+          <Property Name="Discontinuado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Categoria" Relationship="Self.FK_Producto_Categoria" FromRole="Producto" ToRole="Categoria" />
+          <NavigationProperty Name="DetallesOrdenes" Relationship="Self.FK_Detalles_Ordenes_Producto" FromRole="Producto" ToRole="DetallesOrdenes" />
+          <NavigationProperty Name="Suplidor" Relationship="Self.FK_Producto_Suplidor" FromRole="Producto" ToRole="Suplidor" />
+        </EntityType>
+        <EntityType Name="Provincia">
+          <Key>
+            <PropertyRef Name="ProvinciaID" />
+          </Key>
+          <Property Name="ProvinciaID" Type="Int32" Nullable="false" />
+          <Property Name="ProvinciaDescripcion" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Municipio" Relationship="Self.FK_Municipio_Provincia" FromRole="Provincia" ToRole="Municipio" />
+        </EntityType>
+        <EntityType Name="Suplidor">
+          <Key>
+            <PropertyRef Name="SuplidorID" />
+          </Key>
+          <Property Name="SuplidorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreEmpresa" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NombreContacto" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ContactoCargo" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Provincia" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Municipio" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CodigoPostal" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="pais" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="24" FixedLength="false" Unicode="true" />
+          <Property Name="PaginaWeb" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Producto" Relationship="Self.FK_Producto_Suplidor" FromRole="Suplidor" ToRole="Producto" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Ordenes_Carrier">
+          <End Role="Carrier" Type="Self.Carrier" Multiplicity="0..1" />
+          <End Role="Ordenes" Type="Self.Ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carrier">
+              <PropertyRef Name="CarrierID" />
+            </Principal>
+            <Dependent Role="Ordenes">
+              <PropertyRef Name="ViaEnvio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Producto_Categoria">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
+          <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoria">
+              <PropertyRef Name="CategoriaID" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="CategoriaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ordenes_Clientes">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Ordenes" Type="Self.Ordenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ClienteID" />
+            </Principal>
+            <Dependent Role="Ordenes">
+              <PropertyRef Name="ClienteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Detalles_Ordenes_Orders">
+          <End Role="Ordenes" Type="Self.Ordenes" Multiplicity="1" />
+          <End Role="DetallesOrdenes" Type="Self.DetallesOrdenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ordenes">
+              <PropertyRef Name="OrdenesID" />
+            </Principal>
+            <Dependent Role="DetallesOrdenes">
+              <PropertyRef Name="OrdenesID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Detalles_Ordenes_Producto">
+          <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+          <End Role="DetallesOrdenes" Type="Self.DetallesOrdenes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="ProductoID" />
+            </Principal>
+            <Dependent Role="DetallesOrdenes">
+              <PropertyRef Name="ProductoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Municipio_Provincia">
+          <End Role="Provincia" Type="Self.Provincia" Multiplicity="1" />
+          <End Role="Municipio" Type="Self.Municipio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincia">
+              <PropertyRef Name="ProvinciaID" />
+            </Principal>
+            <Dependent Role="Municipio">
+              <PropertyRef Name="ProvinciaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Producto_Suplidor">
+          <End Role="Suplidor" Type="Self.Suplidor" Multiplicity="0..1" />
+          <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Suplidor">
+              <PropertyRef Name="SuplidorID" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="SuplidorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KarmaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Carrier" EntityType="Self.Carrier" />
+          <EntitySet Name="Categoria" EntityType="Self.Categoria" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+          <EntitySet Name="DetallesOrdenes" EntityType="Self.DetallesOrdenes" />
+          <EntitySet Name="Municipio" EntityType="Self.Municipio" />
+          <EntitySet Name="Ordenes" EntityType="Self.Ordenes" />
+          <EntitySet Name="Producto" EntityType="Self.Producto" />
+          <EntitySet Name="Provincia" EntityType="Self.Provincia" />
+          <EntitySet Name="Suplidor" EntityType="Self.Suplidor" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK_Ordenes_Carrier" Association="Self.FK_Ordenes_Carrier">
+            <End Role="Carrier" EntitySet="Carrier" />
+            <End Role="Ordenes" EntitySet="Ordenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Producto_Categoria" Association="Self.FK_Producto_Categoria">
+            <End Role="Categoria" EntitySet="Categoria" />
+            <End Role="Producto" EntitySet="Producto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ordenes_Clientes" Association="Self.FK_Ordenes_Clientes">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Ordenes" EntitySet="Ordenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Detalles_Ordenes_Orders" Association="Self.FK_Detalles_Ordenes_Orders">
+            <End Role="Ordenes" EntitySet="Ordenes" />
+            <End Role="DetallesOrdenes" EntitySet="DetallesOrdenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Detalles_Ordenes_Producto" Association="Self.FK_Detalles_Ordenes_Producto">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="DetallesOrdenes" EntitySet="DetallesOrdenes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Municipio_Provincia" Association="Self.FK_Municipio_Provincia">
+            <End Role="Provincia" EntitySet="Provincia" />
+            <End Role="Municipio" EntitySet="Municipio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Producto_Suplidor" Association="Self.FK_Producto_Suplidor">
+            <End Role="Suplidor" EntitySet="Suplidor" />
+            <End Role="Producto" EntitySet="Producto" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KarmaModelStoreContainer" CdmEntityContainer="KarmaEntities">
+          <EntitySetMapping Name="Carrier">
+            <EntityTypeMapping TypeName="KarmaModel.Carrier">
+              <MappingFragment StoreEntitySet="Carrier">
+                <ScalarProperty Name="CarrierID" ColumnName="CarrierID" />
+                <ScalarProperty Name="NombreCarrier" ColumnName="NombreCarrier" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categoria">
+            <EntityTypeMapping TypeName="KarmaModel.Categoria">
+              <MappingFragment StoreEntitySet="Categoria">
+                <ScalarProperty Name="CategoriaID" ColumnName="CategoriaID" />
+                <ScalarProperty Name="NombreCategoria" ColumnName="NombreCategoria" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="KarmaModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="ClienteID" ColumnName="ClienteID" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+                <ScalarProperty Name="ContactoCargo" ColumnName="ContactoCargo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetallesOrdenes">
+            <EntityTypeMapping TypeName="KarmaModel.DetallesOrdenes">
+              <MappingFragment StoreEntitySet="DetallesOrdenes">
+                <ScalarProperty Name="OrdenesID" ColumnName="OrdenesID" />
+                <ScalarProperty Name="ProductoID" ColumnName="ProductoID" />
+                <ScalarProperty Name="PrecioUnidad" ColumnName="PrecioUnidad" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Municipio">
+            <EntityTypeMapping TypeName="KarmaModel.Municipio">
+              <MappingFragment StoreEntitySet="Municipio">
+                <ScalarProperty Name="MunicipioID" ColumnName="MunicipioID" />
+                <ScalarProperty Name="MunicipioDescripcion" ColumnName="MunicipioDescripcion" />
+                <ScalarProperty Name="ProvinciaID" ColumnName="ProvinciaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ordenes">
+            <EntityTypeMapping TypeName="KarmaModel.Ordenes">
+              <MappingFragment StoreEntitySet="Ordenes">
+                <ScalarProperty Name="OrdenesID" ColumnName="OrdenesID" />
+                <ScalarProperty Name="ClienteID" ColumnName="ClienteID" />
+                <ScalarProperty Name="FechaOrdenes" ColumnName="FechaOrdenes" />
+                <ScalarProperty Name="FechaRequeida" ColumnName="FechaRequeida" />
+                <ScalarProperty Name="FechaEnvio" ColumnName="FechaEnvio" />
+                <ScalarProperty Name="ViaEnvio" ColumnName="ViaEnvio" />
+                <ScalarProperty Name="Flete" ColumnName="Flete" />
+                <ScalarProperty Name="NombreEnvio" ColumnName="NombreEnvio" />
+                <ScalarProperty Name="DireccionEnvio" ColumnName="DireccionEnvio" />
+                <ScalarProperty Name="ProvinciaEnvio" ColumnName="ProvinciaEnvio" />
+                <ScalarProperty Name="MunicipioEnvio" ColumnName="MunicipioEnvio" />
+                <ScalarProperty Name="CodigoPostalEnvio" ColumnName="CodigoPostalEnvio" />
+                <ScalarProperty Name="PaisEnvio" ColumnName="PaisEnvio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Producto">
+            <EntityTypeMapping TypeName="KarmaModel.Producto">
+              <MappingFragment StoreEntitySet="Producto">
+                <ScalarProperty Name="ProductoID" ColumnName="ProductoID" />
+                <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
+                <ScalarProperty Name="SuplidorID" ColumnName="SuplidorID" />
+                <ScalarProperty Name="CategoriaID" ColumnName="CategoriaID" />
+                <ScalarProperty Name="CantidadPorUnidad" ColumnName="CantidadPorUnidad" />
+                <ScalarProperty Name="PrecioUnidad" ColumnName="PrecioUnidad" />
+                <ScalarProperty Name="UnidadesEnStock" ColumnName="UnidadesEnStock" />
+                <ScalarProperty Name="UnidadesPorTransaccion" ColumnName="UnidadesPorTransaccion" />
+                <ScalarProperty Name="NivelPedidosDeStock" ColumnName="NivelPedidosDeStock" />
+                <ScalarProperty Name="Discontinuado" ColumnName="Discontinuado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provincia">
+            <EntityTypeMapping TypeName="KarmaModel.Provincia">
+              <MappingFragment StoreEntitySet="Provincia">
+                <ScalarProperty Name="ProvinciaID" ColumnName="ProvinciaID" />
+                <ScalarProperty Name="ProvinciaDescripcion" ColumnName="ProvinciaDescripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suplidor">
+            <EntityTypeMapping TypeName="KarmaModel.Suplidor">
+              <MappingFragment StoreEntitySet="Suplidor">
+                <ScalarProperty Name="SuplidorID" ColumnName="SuplidorID" />
+                <ScalarProperty Name="NombreEmpresa" ColumnName="NombreEmpresa" />
+                <ScalarProperty Name="NombreContacto" ColumnName="NombreContacto" />
+                <ScalarProperty Name="ContactoCargo" ColumnName="ContactoCargo" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Municipio" ColumnName="Municipio" />
+                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+                <ScalarProperty Name="pais" ColumnName="pais" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="PaginaWeb" ColumnName="PaginaWeb" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="KarmaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

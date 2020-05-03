@@ -1,0 +1,512 @@
+﻿	<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Detalles del Productos</h1>
+                <nav class="d-flex align-items-center">
+                    <a href='@Url.Action("Index","Index")'>Inicio<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="#">Compras<span class="lnr lnr-arrow-right"></span></a>
+                    <a href='@Url.Action("Single","Single")'>Detalles del producto</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+<!--================Single Product Area =================-->
+<div class="product_image_area">
+    <div class="container">
+        <div class="row s_product_inner">
+            <div class="col-lg-6">
+                <div class="s_Product_carousel">
+                    <div class="single-prd-item">
+                        <img class="img-fluid" src="@Url.Content("~/Content/img/category/s-p1.jpg")" alt="">
+                    </div>
+                    <div class="single-prd-item">
+                        <img class="img-fluid" src="@Url.Content("~/Content/img/category/s-p1.jpg")" alt="">
+                    </div>
+                    <div class="single-prd-item">
+                        <img class="img-fluid" src="@Url.Content("~/Content/img/category/s-p1.jpg")" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <div class="s_product_text">
+                    <h3>Calzado Lebron James</h3>
+                    <h2>$149.99</h2>
+                    <ul class="list">
+                        <li><a class="active" href="#"><span>Categoria</span> : Tendencias</a></li>
+                        <li><a href="#"><span>Disponibilidad</span> : En Stock</a></li>
+                    </ul>
+                    <p>
+                        El Soldier XII es el arma predilecta de LeBron para los playoffs. Con este calzado se prepara para la batalla,
+                        ya que le aporta el soporte y la amortiguación que necesita para las 16 victorias. Crea tu propio calzado distintivo
+                        con el LeBron Soldier XII By You, personalizado con los colores de tu equipo y con un mensaje único que represente quién
+                        eres y dónde juegas.
+                    </p>
+                    <div class="product_count">
+                        <label for="qty">Cantidad</label>
+                        <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Cantidad:" class="input-text qty">
+                        <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
+                                class="increase items-count" type="button">
+                            <i class="lnr lnr-chevron-up"></i>
+                        </button>
+                        <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
+                                class="reduced items-count" type="button">
+                            <i class="lnr lnr-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="card_area d-flex align-items-center">
+                        <a class="primary-btn" href="#">Agregar al Carrito</a>
+                        <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--================End Single Product Area =================-->
+<!--================Product Description Area =================-->
+<section class="product_description_area">
+    <div class="container">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Descripcion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                   aria-selected="false">Especificacion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+                   aria-selected="false">Comentarios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
+                   aria-selected="false">Opiniones</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <p>
+                    El Soldier XII es el arma predilecta de LeBron para los playoffs. Con este calzado se prepara para la batalla, 
+                    ya que le aporta el soporte y la amortiguación que necesita para las 16 victorias. Crea tu propio calzado distintivo
+                    con el LeBron Soldier XII By You, personalizado con los colores de tu equipo y con un mensaje único que represente quién 
+                    eres y dónde juegas.
+                </p>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="table-responsive">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h5>Anchura</h5>
+                                </td>
+                                <td>
+                                    <h5>128mm</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5>Altura</h5>
+                                </td>
+                                <td>
+                                    <h5>508mm</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5>Profundidad</h5>
+                                </td>
+                                <td>
+                                    <h5>85mm</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5>Peso</h5>
+                                </td>
+                                <td>
+                                    <h5>52gm</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h5>Control de calidad</h5>
+                                </td>
+                                <td>
+                                    <h5>Si</h5>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="comment_list">
+                            <div class="review_item">
+                                <div class="media">
+                                    <div class="d-flex">
+                                        <img src="@Url.Content("~/Content/img/product/review-1.png")" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Carlos Almanzar</h4>
+                                        <h5>12th Feb, 2018 at 05:56 pm</h5>
+                                        <a class="reply_btn" href="#">Responder</a>
+                                    </div>
+                                </div>
+                                <p>
+                                     Muy comodos,a buen precio y de buena calidad.
+                                </p>
+                            </div>
+                            <div class="review_item reply">
+                                <div class="media">
+                                    <div class="d-flex">
+                                        <img src="@Url.Content("~/Content/img/product/review-2.png")" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Blake Ruiz</h4>
+                                        <h5>23th Mar, 2018 at 05:12 pm</h5>
+                                        <a class="reply_btn" href="#">Responder</a>
+                                    </div>
+                                </div>
+                                <p>
+                                    simplemete lo mejor que he provado,me gustan muchos.
+                                </p>
+                            </div>
+                            <div class="review_item">
+                                <div class="media">
+                                    <div class="d-flex">
+                                        <img src="@Url.Content("~/Content/img/product/review-3.png")" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Julian Gomez</h4>
+                                        <h5>05th Ene, 2018 at 12:30 pm</h5>
+                                        <a class="reply_btn" href="#">Responder</a>
+                                    </div>
+                                </div>
+                                <p>
+                                    Coloridos y de buena sensacion en las plantas de los pies.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="review_box">
+                            <h4>Publicar un comentario</h4>
+                            <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Nombre completo">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Correo electronico">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="number" name="number" placeholder="Telefono o celular">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="message" id="message" rows="1" placeholder="Mensaje"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-right">
+                                    <button type="submit" value="submit" class="btn primary-btn">Enviar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row total_rate">
+                            <div class="col-6">
+                                <div class="box_total">
+                                    <h5>En general</h5>
+                                    <h4>4.0</h4>
+                                    <h6>(03 Opiniones)</h6>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="rating_list">
+                                    <h3>Basado en 3 opiniones</h3>
+                                    <ul class="list">
+                                        <li>
+                                            <a href="#">
+                                                5 Estrellas <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 01
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                4 Estrellas <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 01
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                3 Estrellas <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 01
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                2 Estrellas <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 01
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                1 Estrellas <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 01
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review_list">
+                            <div class="review_item">
+                                <div class="media">
+                                    <div class="d-flex">
+                                        <img src="@Url.Content("~/Content/img/product/review-1.png")" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Blake Ruiz</h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <p>
+                                   Materiales de primera y un diseño moderno e inovador.
+                                </p>
+                            </div>
+                            <div class="review_item">
+                                <div class="media">
+                                    <div class="d-flex">
+                                        <img src="@Url.Content("~/Content/img/product/review-2.png")" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Eddy Perez</h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <p>
+                                   Desde que los vi me encantaron y he comprado 2 pares.
+                                </p>
+                            </div>
+                            <div class="review_item">
+                                <div class="media">
+                                    <div class="d-flex">
+                                        <img src="@Url.Content("~/Content/img/product/review-3.png")" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Ruben Alcantara</h4>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <p>
+                                    Recomendado a todo a quel que busque calidad y buen precio.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="review_box">
+                            <h4>Agrega una reseña</h4>
+                            <p>Tu clasificación:</p>
+                            <ul class="list">
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                            </ul>
+                            <p>Excepcional</p>
+                            <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Tu nombre" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Full name'">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Correo electronico" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="number" name="number" placeholder="Telefono o celular" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Number'">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="message" id="message" rows="1" placeholder="Reseña" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Review'"></textarea></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-right">
+                                    <button type="submit" value="submit" class="primary-btn">Enviar ya</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Product Description Area =================-->
+<!-- Start related-product Area -->
+<section class="related-product-area section_gap_bottom">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="section-title">
+                    <h1>Ofertas de la semana</h1>
+                    <p>
+                        No pierdas tiempo ,aprovecha estos precios y llevatelos todos.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
+                        <div class="single-related-product d-flex">
+                            <a href="#"><img src="@Url.Content("~/Content/img/r1.jpg")" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Black lace Heels</a>
+                                <div class="price">
+                                    <h6>$189.00</h6>
+                                    <h6 class="l-through">$210.00</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
+                        <div class="single-related-product d-flex">
+                            <a href="#"><img src="@Url.Content("~/Content/img/r2.jpg")" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Black lace Heels</a>
+                                <div class="price">
+                                    <h6>$189.00</h6>
+                                    <h6 class="l-through">$210.00</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
+                        <div class="single-related-product d-flex">
+                            <a href="#"><img src="@Url.Content("~/Content/img/r3.jpg")" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Black lace Heels</a>
+                                <div class="price">
+                                    <h6>$189.00</h6>
+                                    <h6 class="l-through">$210.00</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
+                        <div class="single-related-product d-flex">
+                            <a href="#"><img src="@Url.Content("~/Content/img/r5.jpg")" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Black lace Heels</a>
+                                <div class="price">
+                                    <h6>$189.00</h6>
+                                    <h6 class="l-through">$210.00</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
+                        <div class="single-related-product d-flex">
+                            <a href="#"><img src="@Url.Content("~/Content/img/r6.jpg")" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Black lace Heels</a>
+                                <div class="price">
+                                    <h6>$189.00</h6>
+                                    <h6 class="l-through">$210.00</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
+                        <div class="single-related-product d-flex">
+                            <a href="#"><img src="@Url.Content("~/Content/img/r7.jpg")" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Black lace Heels</a>
+                                <div class="price">
+                                    <h6>$189.00</h6>
+                                    <h6 class="l-through">$210.00</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="single-related-product d-flex">
+                            <a href="#"><img src="@Url.Content("~/Content/img/r9.jpg")" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Black lace Heels</a>
+                                <div class="price">
+                                    <h6>$189.00</h6>
+                                    <h6 class="l-through">$210.00</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="single-related-product d-flex">
+                            <a href="#"><img src="@Url.Content("~/Content/img/r10.jpg")" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Black lace Heels</a>
+                                <div class="price">
+                                    <h6>$189.00</h6>
+                                    <h6 class="l-through">$210.00</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="single-related-product d-flex">
+                            <a href="#"><img src="@Url.Content("~/Content/img/r11.jpg")" alt=""></a>
+                            <div class="desc">
+                                <a href="#" class="title">Black lace Heels</a>
+                                <div class="price">
+                                    <h6>$189.00</h6>
+                                    <h6 class="l-through">$210.00</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="ctg-right">
+                    <a href="#" target="_blank">
+                        <img class="img-fluid d-block mx-auto" src="@Url.Content("~/Content/img/category/c5.jpg")" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End related-product Area -->

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Karma.Models.DetallesOrdenes>
+
+@{
+    ViewBag.Title = "Indice";
+}
+
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Shop Detalles ordenes page</h1>
+                <nav class="d-flex align-items-center">
+                    <a href='@Url.Action("Index","Index")'>Inicio<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="#"><span class="lnr lnr-arrow-right"></span></a>
+                    <a href='@Url.Action("Index","DetallesOrdenes")'>Detalles ordenes</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PrecioUnidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ordenes.ClienteID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producto.NombreProducto)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrecioUnidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ordenes.ClienteID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto.NombreProducto)
+            </td>
+
+        </tr>
+    }
+
+</table>

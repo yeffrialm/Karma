@@ -1,0 +1,65 @@
+﻿@model Karma.Models.DetallesOrdenes
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Shop Detalles ordenes page</h1>
+                <nav class="d-flex align-items-center">
+                    <a href='@Url.Action("Index","Index")'>Inicio<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="#"><span class="lnr lnr-arrow-right"></span></a>
+                    <a href='@Url.Action("Details","DetallesOrdenes")'>Detalles ordenes</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+
+<div>
+    <h4>DetallesOrdenes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioUnidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioUnidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ordenes.ClienteID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ordenes.ClienteID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producto.NombreProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producto.NombreProducto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Regresar atras", "Index")
+</p>

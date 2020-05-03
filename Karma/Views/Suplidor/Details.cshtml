@@ -1,0 +1,113 @@
+﻿@model Karma.Models.Suplidor
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Shop Suplidor page</h1>
+                <nav class="d-flex align-items-center">
+                    <a href='@Url.Action("Index","Index")'>Inicio<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="#"><span class="lnr lnr-arrow-right"></span></a>
+                    <a href='@Url.Action("Details","Suplidor")'>Suplidor</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+
+<div>
+    <h4>Suplidor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreEmpresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreEmpresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreContacto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreContacto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactoCargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactoCargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Provincia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Provincia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Municipio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Municipio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoPostal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoPostal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaginaWeb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaginaWeb)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.SuplidorID }) |
+    @Html.ActionLink("Regresar atras", "Index")
+</p>

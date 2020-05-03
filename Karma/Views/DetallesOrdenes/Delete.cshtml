@@ -1,0 +1,72 @@
+﻿@model Karma.Models.DetallesOrdenes
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Shop Detalles ordenes page</h1>
+                <nav class="d-flex align-items-center">
+                    <a href='@Url.Action("Index","Index")'>Inicio<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="#"><span class="lnr lnr-arrow-right"></span></a>
+                    <a href='@Url.Action("Delete","DetallesOrdenes")'>Detalles ordenes</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+
+<h3>Estas seguro que quieres borrarlo?</h3>
+<div>
+    <h4>DetallesOrdenes</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecioUnidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecioUnidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ordenes.ClienteID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ordenes.ClienteID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producto.NombreProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producto.NombreProducto)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regesar atras", "Index")
+        </div>
+    }
+</div>
